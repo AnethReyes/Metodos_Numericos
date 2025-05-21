@@ -16,13 +16,13 @@ public class Secante {
             x0 = x1;
             x1 = x2;
         }
-        throw new RuntimeException("No convergió en " + maxIter + " iteraciones");
+        throw new RuntimeException("No convergio en " + maxIter + " iteraciones");
     }
 
     // Ejemplo de uso
     public static void main(String[] args) {
         Funcion f = x -> x * x - 2; // f(x) = x² - 2 (raíz √2 ≈ 1.41)
         double raiz = resolver(f, 1.0, 2.0, 0.0001, 100);
-        System.out.println("Raíz aproximada: " + raiz); // Output: 1.41
+        System.out.println("Raiz aproximada: " + raiz); // Output: 1.41
     }
 }
