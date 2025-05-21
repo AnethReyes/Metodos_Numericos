@@ -33,7 +33,7 @@ public class GaussSeidel {
         double[][] A = {{4, 1, -1}, {2, 5, 2}, {1, -1, 3}};
         double[] b = {5, -1, 3};
         double[] x = resolver(A, b, 0.001);
-        System.out.println("Solución: " + Arrays.toString(x));
+        System.out.println("Solucion: " + Arrays.toString(x));
         // Output: [1.0, -1.0, 1.0]
     }
 }
