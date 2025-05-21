@@ -57,7 +57,7 @@ public class GaussJordan {
         double[][] A = {{2, 1, -1}, {-3, -1, 2}, {-2, 1, 2}};
         double[] b = {8, -11, -3};
         double[] x = resolver(A, b);
-        System.out.println("Solución: " + Arrays.toString(x));
+        System.out.println("Solucion: " + Arrays.toString(x));
         // Output: [2.0, 3.0, -1.0]
     }
 }
