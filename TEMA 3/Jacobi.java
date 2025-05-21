@@ -36,7 +36,7 @@ public class Jacobi {
         double[][] A = {{4, -1, 0}, {-1, 4, -1}, {0, -1, 4}};
         double[] b = {2, 6, 2};
         double[] x = resolver(A, b, 0.0001, 100);
-        System.out.println("Solución: " + Arrays.toString(x));
+        System.out.println("Solucion: " + Arrays.toString(x));
         // Output: [1.0, 2.0, 1.0]
     }
 }
