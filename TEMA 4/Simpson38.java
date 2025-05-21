@@ -5,7 +5,7 @@
 public class Simpson38 {
     
     public static double integrar(Funcion f, double a, double b, int n) {
-        if (n % 3 != 0) throw new IllegalArgumentException("n debe ser múltiplo de 3");
+        if (n % 3 != 0) throw new IllegalArgumentException("n debe ser multiplo de 3");
         
         double h = (b - a) / n;
         double suma = f.evaluar(a) + f.evaluar(b);
