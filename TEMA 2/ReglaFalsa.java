@@ -32,6 +32,6 @@ public class ReglaFalsa {
     public static void main(String[] args) {
         Funcion f = x -> Math.cos(x) - x; // f(x) = cos(x) - x (raíz ≈ 0.74)
         double raiz = resolver(f, 0.0, 1.0, 0.0001, 100);
-        System.out.println("Raíz aproximada: " + raiz); // Output: 0.74
+        System.out.println("Raiz aproximada: " + raiz); // Output: 0.74
     }
 }
