@@ -13,13 +13,13 @@ public class AproximacionesSucesivas {
             }
             xActual = xNuevo;
         }
-        throw new RuntimeException("No convergió en " + maxIter + " iteraciones");
+        throw new RuntimeException("No convergio en " + maxIter + " iteraciones");
     }
 
     // Ejemplo de uso
     public static void main(String[] args) {
         Funcion g = x -> Math.pow(x + 2, 1.0/3.0); // g(x) = ∛(x + 2)
         double raiz = resolver(g, 1.0, 0.001, 100);
-        System.out.println("Raíz aproximada: " + raiz); // Output: 1.52
+        System.out.println("Raiz aproximada: " + raiz); // Output: 1.52
     }
 }
