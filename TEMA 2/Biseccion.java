@@ -29,7 +29,7 @@ public class Biseccion {
     public static void main(String[] args) {
         Funcion f = x -> Math.pow(x, 3) - x - 2; // f(x) = x³ - x - 2
         double raiz = resolver(f, 1.0, 2.0, 0.001, 100);
-        System.out.println("Raíz aproximada: " + raiz); // Output: 1.52
+        System.out.println("Raiz aproximada: " + raiz); // Output: 1.52
     }
 }
 
