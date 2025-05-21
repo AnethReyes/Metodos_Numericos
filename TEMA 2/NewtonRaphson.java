@@ -15,7 +15,7 @@ public class NewtonRaphson {
             }
             x = x - fx / dfx;
         }
-        throw new RuntimeException("No convergió en " + maxIter + " iteraciones");
+        throw new RuntimeException("No convergio en " + maxIter + " iteraciones");
     }
 
     // Ejemplo de uso
@@ -23,6 +23,6 @@ public class NewtonRaphson {
         Funcion f = x -> Math.cos(x) - x; // f(x) = cos(x) - x
         Funcion df = x -> -Math.sin(x) - 1; // f'(x) = -sin(x) - 1
         double raiz = resolver(f, df, 1.0, 0.0001, 100);
-        System.out.println("Raíz aproximada: " + raiz); // Output: 0.74
+        System.out.println("Raiz aproximada: " + raiz); // Output: 0.74
     }
 }
