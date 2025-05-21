@@ -49,7 +49,7 @@ public class Gaussiana {
         double[][] A = {{3, 2, -1}, {2, -2, 4}, {-1, 0.5, -1}};
         double[] b = {1, -2, 0};
         double[] x = resolver(A, b);
-        System.out.println("Solución: " + Arrays.toString(x)); 
+        System.out.println("Solucion: " + Arrays.toString(x)); 
         // Output: [1.0, -2.0, -2.0]
     }
 }
