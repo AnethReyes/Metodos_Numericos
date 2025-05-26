@@ -28,7 +28,7 @@ Los métodos numéricos son técnicas algorítmicas para resolver problemas mate
    - 1.3 Software de cómputo numérico  
 
 ### 2. [Solución de Ecuaciones](/TEMA 2)
-   - 2.1 [Bisección](/Tema2_SolucionEcuaciones/Biseccion.java)  
+   - 2.1 [Bisección](/TEMA%202/Biseccion.java)  
    - 2.2 [Newton-Raphson](/Tema2_SolucionEcuaciones/NewtonRaphson.java)  
    - 2.3 [Regla Falsa](/Tema2_SolucionEcuaciones/ReglaFalsa.java)  
 
