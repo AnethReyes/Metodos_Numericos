@@ -1,1 +1,46 @@
+# TEMA 6 - Solución de Ecuaciones Diferenciales Ordinarias (EDOs)
 
+## Introducción
+
+Los métodos numéricos para resolver ecuaciones diferenciales ordinarias son herramientas fundamentales en modelado científico e ingeniería, especialmente cuando no existen soluciones analíticas. Este tema cubre tres enfoques clave:
+
+### 1. Método de Euler (Un Paso)
+**Concepto:**  
+El método más simple que aproxima la solución mediante lineas rectas tangentes a la curva real. Ideal para introducción conceptual.
+
+**Características:**  
+- 🟢 Fácil implementación  
+- 🟡 Error proporcional al tamaño de paso (O(h))  
+- 🔴 Requiere pasos muy pequeños para precisión  
+
+**Ecuación Clave:**  
+$$
+y_{n+1} = y_n + h f(t_n, y_n)
+$$
+
+### 2. Método de Runge-Kutta de 4to Orden (RK4)
+**Concepto:**  
+El "caballo de batalla" de los métodos numéricos, combina cuatro evaluaciones de pendiente para lograr mayor precisión sin calcular derivadas.
+
+**Características:**  
+- 🟢 Precisión de orden O(h⁴)  
+- 🟡 Coste computacional moderado (4 evaluaciones/paso)  
+- 🟢 Ampliamente usado en aplicaciones reales  
+
+**Ecuación Clave:**  
+$$
+y_{n+1} = y_n + \frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4)
+$$
+
+### 3. Método de Taylor de 2do Orden
+**Concepto:**  
+Extensión del método de Euler que incorpora la segunda derivada para mejorar la precisión. Requiere conocimiento de las derivadas de la función.
+
+**Características:**  
+- 🟢 Mayor precisión que Euler (O(h²))  
+- 🔴 Necesita derivadas analíticas  
+- 🟡 Punto intermedio entre Euler y RK4  
+
+**Ecuación Clave:**  
+$$
+y_{n+1} = y_n + h f(t_n, y_n) + \frac{h^2}{2} f'(t_n, y_n)
