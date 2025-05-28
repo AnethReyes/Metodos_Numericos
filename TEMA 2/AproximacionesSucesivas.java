@@ -30,9 +30,7 @@ public class AproximacionesSucesivas {
     }
 }
 
-# === Ejemplo de ejecución ===
-# Input:
-# g(x) = ∛(x + 2), x0 = 1.0, tol = 0.001, maxIter = 100
+/** # === Ejemplo de ejecución ===
+* Output:
+* Raiz aproximada: 1.52 */
 
-# Output:
-# Raiz aproximada: 1.52
