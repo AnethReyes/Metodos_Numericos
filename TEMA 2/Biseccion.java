@@ -22,17 +22,21 @@ public class Biseccion {
                 a = c;
             }
         }
-        return Math.round(c * 100.0) / 100.0; // Redondeo a 2 decimales
+        return Math.round(c * 100.0) / 100.0; 
     }
 
     // Ejemplo de uso
     public static void main(String[] args) {
-        Funcion f = x -> Math.pow(x, 3) - x - 2; // f(x) = x³ - x - 2
+        Funcion f = x -> Math.pow(x, 3) - x - 2;
         double raiz = resolver(f, 1.0, 2.0, 0.001, 100);
-        System.out.println("Raiz aproximada: " + raiz); // Output: 1.52
+        System.out.println("Raiz aproximada: " + raiz); 
     }
 }
 
 interface Funcion {
     double evaluar(double x);
 }
+
+/** # === Ejemplo de ejecución ===
+* Output:
+* Raiz aproximada: 1.52 */
