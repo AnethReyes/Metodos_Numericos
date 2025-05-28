@@ -38,5 +38,7 @@ interface Funcion {
 }
 
 /** # === Ejemplo de ejecución ===
+* Input:
+* f(x) = x³ - x - 2
 * Output:
 * Raiz aproximada: 1.52 */
