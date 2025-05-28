@@ -54,5 +54,6 @@ Los métodos numéricos son técnicas algorítmicas para resolver problemas mate
    - 5.5 [Regresion Lineal](/TEMA%205/RegresionLineal.java) 
 
 ### 6. [Ecuaciones Diferenciales](/TEMA%206)
-   - 6.1 [Método de Euler](/Tema6_EcuacionesDiferenciales/Euler.java)  
-   - 6.2 [Runge-Kutta](/Tema6_EcuacionesDiferenciales/RungeKutta.java)  
+   - 6.1 [Método de Euler](/TEMA%206/Euler.java)  
+   - 6.2 [Runge-Kutta](/TEMA%206/RungeKutta4.java)
+   - 6.3 [Método de Taylor](/TEMA%206/Taylor2.java)
