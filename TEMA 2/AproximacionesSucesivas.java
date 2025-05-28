@@ -4,6 +4,12 @@
  */
 public class AproximacionesSucesivas {
     
+    // Definición de la interfaz Funcion
+    @FunctionalInterface
+    public interface Funcion {
+        double evaluar(double x);
+    }
+    
     public static double resolver(Funcion g, double x0, double tol, int maxIter) {
         double xActual = x0;
         for (int iter = 0; iter < maxIter; iter++) {
@@ -13,13 +19,20 @@ public class AproximacionesSucesivas {
             }
             xActual = xNuevo;
         }
-        throw new RuntimeException("No convergio en " + maxIter + " iteraciones");
+        throw new RuntimeException("No convergió en " + maxIter + " iteraciones");
     }
 
     // Ejemplo de uso
     public static void main(String[] args) {
-        Funcion g = x -> Math.pow(x + 2, 1.0/3.0); // g(x) = ∛(x + 2)
+        Funcion g = x -> Math.pow(x + 2, 1.0/3.0); 
         double raiz = resolver(g, 1.0, 0.001, 100);
-        System.out.println("Raiz aproximada: " + raiz); // Output: 1.52
+        System.out.println("Raiz aproximada: " + raiz); 
     }
 }
+
+# === Ejemplo de ejecución ===
+# Input:
+# g(x) = ∛(x + 2), x0 = 1.0, tol = 0.001, maxIter = 100
+
+# Output:
+# Raiz aproximada: 1.52
