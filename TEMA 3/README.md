@@ -12,6 +12,18 @@ Los sistemas de ecuaciones lineales aparecen en numerosos problemas científicos
 
 La elección entre métodos directos e iterativos depende del tamaño del sistema, dispersión de la matriz y recursos computacionales disponibles. Los métodos iterativos son preferibles para sistemas grandes y dispersos.
 
+## Eliminación Gaussiana
+Método directo para resolver sistemas de ecuaciones lineales mediante la transformación de la matriz aumentada en una forma triangular superior, seguida de sustitución hacia atrás.
+
+## Gauss-Jordan
+Variante de la eliminación gaussiana que transforma la matriz aumentada directamente en una matriz identidad, obteniendo la solución sin necesidad de sustitución hacia atrás.
+
+## Método de Jacobi
+Método iterativo para resolver sistemas lineales Ax = b, donde la matriz A se descompone en sus componentes diagonal (D), triangular inferior (L) y triangular superior (U).
+
+## Método de Gauss-Seidel
+Versión optimizada del método de Jacobi que utiliza los valores actualizados de las variables en la misma iteración.
+
 ## Pseudocódigos de los Métodos Implementados
 
 ### 1. Método de Gauss Jordan
