@@ -53,3 +53,12 @@ public class RegresionLineal {
         */
     }
 }
+
+/** # === Ejemplo de ejecución ===
+* Input:
+* x = [1, 2, 3, 4, 5]
+* y = [2, 3.1, 3.9, 5.1, 6]
+* Output:
+* Ecuación: y = 1.02 + 0.99x
+* Coeficiente R²: 0.99
+*/
