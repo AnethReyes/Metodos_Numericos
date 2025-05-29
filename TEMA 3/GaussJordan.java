@@ -2,6 +2,7 @@
  * Transforma la matriz aumentada [A|b] a forma escalonada reducida (matriz identidad)
  * Útil para calcular matrices inversas y resolver sistemas múltiples
  */
+import java.util.Arrays;
 public class GaussJordan {
     
     public static double[] resolver(double[][] A, double[] b) {
@@ -58,6 +59,17 @@ public class GaussJordan {
         double[] b = {8, -11, -3};
         double[] x = resolver(A, b);
         System.out.println("Solucion: " + Arrays.toString(x));
-        // Output: [2.0, 3.0, -1.0]
     }
 }
+
+/** # === Ejemplo de ejecución ===
+* Input:
+* A = {
+*   {2, 1, -1},
+*   {-3, -1, 2},
+*   {-2, 1, 2}
+* }
+* b = {8, -11, -3}
+* Output:
+* Solucion: [2.0, 3.0, -1.0]
+*/
