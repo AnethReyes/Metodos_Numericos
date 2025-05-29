@@ -2,6 +2,8 @@
  * Método iterativo que descompone la matriz en diagonal (D) y resto (R)
  * Fórmula de iteración: x^{(k+1)} = D^{-1}(b - Rx^{(k)})
  */
+import java.util.Arrays;
+
 public class Jacobi {
     
     public static double[] resolver(double[][] A, double[] b, double tol, int maxIter) {
@@ -40,3 +42,18 @@ public class Jacobi {
         // Output: [1.0, 2.0, 1.0]
     }
 }
+
+/** # === Ejemplo de ejecución ===
+* Input:
+* A = {
+*   {4, -1, 0},
+*   {-1, 4, -1},
+*   {0, -1, 4}
+* }
+* b = {2, 6, 2}
+* tol = 0.0001
+* maxIter = 100
+* Output:
+* Solucion: [1.0, 2.0, 1.0]
+*/
+
