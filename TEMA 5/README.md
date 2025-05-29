@@ -14,6 +14,23 @@ Cuando se tienen datos discretos y se necesita estimar valores intermedios o enc
 
 Estas técnicas son ampliamente usadas en procesamiento de señales, visualización de datos y machine learning.
 
+## Interpolación Lineal
+Esta técnica fundamental estima valores intermedios entre dos puntos conocidos conectándolos con una línea recta. La fórmula básica para un punto x entre (x₀,y₀) y (x₁,y₁) es:
+
+y = y₀ + (y₁ - y₀) * (x - x₀)/(x₁ - x₀)
+
+## Interpolación de Lagrange
+Método polinomial que pasa exactamente por n puntos conocidos usando polinomios base
+
+## Regresión Lineal
+Modelo estadístico que encuentra la relación lineal óptima entre variables independientes y dependientes minimizando el error cuadrático
+
+## Mínimos Cuadrados
+Técnica fundamental de optimización para resolver sistemas sobredeterminados.
+
+## Correlación
+Medida estadística de la relación lineal entre variables
+
 ## Pseudocódigos de los Métodos Implementados
 
 ### 1. Método de Correlacion 
