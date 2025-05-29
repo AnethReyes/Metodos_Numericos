@@ -4,6 +4,12 @@
  */
 public class GaussLegendre {
     
+    // Interfaz funcional para representar una función matemática
+    @FunctionalInterface
+    public interface Funcion {
+        double evaluar(double x);
+    }
+    
     private static final double[] NODOS = {-1/Math.sqrt(3), 1/Math.sqrt(3)};
     private static final double[] PESOS = {1, 1};
     
@@ -22,8 +28,17 @@ public class GaussLegendre {
 
     // Ejemplo: ∫(1/(1+x^2))dx de 0 a 1 ≈ 0.79 (arctan(1) = π/4 ≈ 0.785)
     public static void main(String[] args) {
-        Funcion f = x -> 1 / (1 + Math.pow(x, 2));
+        Funcion f = x -> 1 / (1 + Math.pow(x, 2));  // Ahora Funcion está definido
         double integral = integrar(f, 0, 1);
         System.out.println("Integral aproximada: " + integral);
     }
 }
+
+/** # === Ejemplo de ejecución ===
+* Input:
+* f(x) = 1 / (1 + x²)
+* Intervalo: [0, 1]
+* Output:
+* Integral aproximada: 0.79
+*/
+
