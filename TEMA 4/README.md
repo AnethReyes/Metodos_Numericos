@@ -13,6 +13,7 @@ Cuando las funciones son difíciles de derivar o integrar analíticamente, o sol
 
 Estos métodos son fundamentales en física computacional, ingeniería y análisis de datos.
 
+# **Integración numérica**
 ## Método del Trapecio
 Este método aproxima el área bajo una curva dividiendo el intervalo de integración en segmentos y calculando el área de trapecios formados entre cada par de puntos.
 
@@ -27,25 +28,24 @@ Método de integración numérica avanzado que selecciona óptimamente puntos de
 
 ## Pseudocódigos de los Métodos Implementados
 
-### 1. Método de Gauss Legendre
+### 1. Método del trapecio
 
 ```plaintext
-Algoritmo Gauss-Legendre (2 puntos):
+Algoritmo Trapecio Compuesto:
    Entrada:
       - f: función a integrar
-      - a, b: límites
+      - a, b: límites de integración
+      - n: número de subintervalos
    Salida:
       - Aproximación de la integral
 
-   1. nodos ← [-1/√3, 1/√3]
-   2. pesos ← [1, 1]
-   3. suma ← 0
-   4. Para i desde 0 hasta 1 hacer:
-         t ← nodos[i]
-         x ← ((b-a)*t + a + b) / 2
-         suma ← suma + pesos[i] * f(x)
-   5. integral ← ((b-a)/2) * suma
-   6. Retornar integral
+   1. h ← (b - a) / n
+   2. suma ← (f(a) + f(b)) / 2
+   3. Para i desde 1 hasta n-1 hacer:
+         x_i ← a + i*h
+         suma ← suma + f(x_i)
+   4. integral ← h * suma
+   5. Retornar integral
 ```
 ### 2. Método de Simpson 1/3
 
@@ -93,22 +93,24 @@ Algoritmo Simpson 3/8:
    5. integral ← (3*h / 8) * suma
    6. Retornar integral
 ```
-### 4. Método del trapecio
+### 4. Método de Gauss Legendre
 
 ```plaintext
-Algoritmo Trapecio Compuesto:
+Algoritmo Gauss-Legendre (2 puntos):
    Entrada:
       - f: función a integrar
-      - a, b: límites de integración
-      - n: número de subintervalos
+      - a, b: límites
    Salida:
       - Aproximación de la integral
 
-   1. h ← (b - a) / n
-   2. suma ← (f(a) + f(b)) / 2
-   3. Para i desde 1 hasta n-1 hacer:
-         x_i ← a + i*h
-         suma ← suma + f(x_i)
-   4. integral ← h * suma
-   5. Retornar integral
+   1. nodos ← [-1/√3, 1/√3]
+   2. pesos ← [1, 1]
+   3. suma ← 0
+   4. Para i desde 0 hasta 1 hacer:
+         t ← nodos[i]
+         x ← ((b-a)*t + a + b) / 2
+         suma ← suma + pesos[i] * f(x)
+   5. integral ← ((b-a)/2) * suma
+   6. Retornar integral
 ```
+
