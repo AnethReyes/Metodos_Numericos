@@ -4,6 +4,8 @@
  * @param b Vector de términos independientes
  * @return Solución x con redondeo a 2 decimales
  */
+import java.util.Arrays;
+
 public class Gaussiana {
     
     public static double[] resolver(double[][] A, double[] b) {
@@ -53,3 +55,16 @@ public class Gaussiana {
         // Output: [1.0, -2.0, -2.0]
     }
 }
+
+/** # === Ejemplo de ejecución ===
+* Input:
+* A = {
+*   {3, 2, -1},
+*   {2, -2, 4},
+*   {-1, 0.5, -1}
+* }
+* b = {1, -2, 0}
+* Output:
+* Solucion: [1.0, -2.0, -2.0]
+*/
+
