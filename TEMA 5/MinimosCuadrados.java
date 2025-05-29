@@ -35,3 +35,11 @@ public class MinimosCuadrados {
         // Output: y = 0.67 + 0.50x
     }
 }
+
+/** # === Ejemplo de ejecución ===
+* Input:
+* x = [1, 2, 3]
+* y = [1, 2, 2]
+* Output:
+* Ecuacion: y = 0.67 + 0.50x
+*/
