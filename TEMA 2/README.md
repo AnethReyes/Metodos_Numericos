@@ -7,6 +7,22 @@ Los métodos se dividen en:
 - **Métodos abiertos** (requieren aproximación inicial): Newton-Raphson, Secante, Punto Fijo
 
 Cada método tiene ventajas en términos de convergencia, velocidad y requisitos iniciales. La elección depende del problema específico y del comportamiento de la función.
+
+## Bisección
+El método de bisección es un algoritmo de búsqueda de raíces que divide repetidamente un intervalo a la mitad y selecciona el subintervalo que contiene la raíz. Requiere que la función cambie de signo en el intervalo inicial.
+
+## Regla Falsa
+Similar al método de bisección, pero en lugar de dividir el intervalo a la mitad, utiliza una aproximación lineal (interpolación) para estimar la raíz. También requiere un cambio de signo en el intervalo.
+
+## Newton-Raphson
+Este método utiliza la derivada de la función para encontrar una aproximación de la raíz. Parte de una estimación inicial y mejora iterativamente usando la tangente a la curva.
+
+## Secante
+Una variante del método de Newton-Raphson que no requiere la derivada. En su lugar, utiliza aproximaciones secuenciales basadas en puntos anteriores.
+
+## Aproximaciones Sucesivas
+Este método reorganiza la ecuación f(x) = 0 en la forma x = g(x) y itera esta relación hasta converger a la raíz.
+
 ## Pseudocódigos de los Métodos Implementados
 
 ### 1. Método de Aproximaciones Sucesivas (Punto Fijo)
