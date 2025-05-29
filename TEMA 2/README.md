@@ -28,29 +28,7 @@ Este método reorganiza la ecuación f(x) = 0 en la forma x = g(x) y itera esta 
 
 ## Pseudocódigos de los Métodos Implementados
 
-### 1. Método de Aproximaciones Sucesivas (Punto Fijo)
-**Fórmula:**  
-`x_{n+1} = g(x_n)`
-
-```plaintext
-Algoritmo Punto Fijo:
-   Entrada: 
-      - g: función de iteración (debe cumplir |g'(x)| < 1)
-      - x0: aproximación inicial
-      - tol: tolerancia
-      - max_iter: máximo de iteraciones
-   Salida: raíz aproximada
-
-   1. x_actual ← x0
-   2. Para iter desde 1 hasta max_iter hacer:
-         x_nuevo ← g(x_actual)
-         Si |x_nuevo - x_actual| < tol entonces
-            Retornar x_nuevo
-         Fin Si
-         x_actual ← x_nuevo
-   3. Lanzar error "No convergió en max_iter iteraciones"
-```
-### 2. Método de Bisección
+### 1. Método de Bisección
 **Fórmula:**  
 `c = (a + b) / 2`
 
@@ -77,34 +55,7 @@ Algoritmo Bisección:
          Fin Si
    3. Retornar c (última aproximación)
 ```
-### 3. Método de Newton-Raphson
-**Fórmula:**  
-`x_{n+1} = x_n - f(x_n)/f'(x_n)`
-
-```plaintext
-Algoritmo Newton-Raphson:
-   Entrada: 
-      - f: función diferenciable
-      - df: derivada de f
-      - x0: aproximación inicial
-      - tol: tolerancia
-      - max_iter: máximo de iteraciones
-   Salida: raíz aproximada
-
-   1. x ← x0
-   2. Para iter desde 1 hasta max_iter hacer:
-         fx ← f(x)
-         Si |fx| < tol entonces
-            Retornar x
-         Fin Si
-         dfx ← df(x)
-         Si dfx = 0 entonces
-            Lanzar error "Derivada cero"
-         Fin Si
-         x ← x - fx/dfx
-   3. Retornar x
-```
-### 4. Método de Regla Falsa
+### 2. Método de Regla Falsa
 **Fórmula:**  
 `c = [a*f(b) - b*f(a)] / [f(b) - f(a)]`
 
@@ -130,6 +81,56 @@ Algoritmo Regla Falsa:
             a ← c
          Fin Si
    3. Retornar c
+```
+
+### 3. Método de Aproximaciones Sucesivas (Punto Fijo)
+**Fórmula:**  
+`x_{n+1} = g(x_n)`
+
+```plaintext
+Algoritmo Punto Fijo:
+   Entrada: 
+      - g: función de iteración (debe cumplir |g'(x)| < 1)
+      - x0: aproximación inicial
+      - tol: tolerancia
+      - max_iter: máximo de iteraciones
+   Salida: raíz aproximada
+
+   1. x_actual ← x0
+   2. Para iter desde 1 hasta max_iter hacer:
+         x_nuevo ← g(x_actual)
+         Si |x_nuevo - x_actual| < tol entonces
+            Retornar x_nuevo
+         Fin Si
+         x_actual ← x_nuevo
+   3. Lanzar error "No convergió en max_iter iteraciones"
+```
+### 4. Método de Newton-Raphson
+**Fórmula:**  
+`x_{n+1} = x_n - f(x_n)/f'(x_n)`
+
+```plaintext
+Algoritmo Newton-Raphson:
+   Entrada: 
+      - f: función diferenciable
+      - df: derivada de f
+      - x0: aproximación inicial
+      - tol: tolerancia
+      - max_iter: máximo de iteraciones
+   Salida: raíz aproximada
+
+   1. x ← x0
+   2. Para iter desde 1 hasta max_iter hacer:
+         fx ← f(x)
+         Si |fx| < tol entonces
+            Retornar x
+         Fin Si
+         dfx ← df(x)
+         Si dfx = 0 entonces
+            Lanzar error "Derivada cero"
+         Fin Si
+         x ← x - fx/dfx
+   3. Retornar x
 ```
 ### 5. Método de la Secante
 **Fórmula:**  
