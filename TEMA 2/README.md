@@ -8,12 +8,15 @@ Los métodos se dividen en:
 
 Cada método tiene ventajas en términos de convergencia, velocidad y requisitos iniciales. La elección depende del problema específico y del comportamiento de la función.
 
+
+## **Métodos cerrados**
 ## Bisección
 El método de bisección es un algoritmo de búsqueda de raíces que divide repetidamente un intervalo a la mitad y selecciona el subintervalo que contiene la raíz. Requiere que la función cambie de signo en el intervalo inicial.
 
 ## Regla Falsa
 Similar al método de bisección, pero en lugar de dividir el intervalo a la mitad, utiliza una aproximación lineal (interpolación) para estimar la raíz. También requiere un cambio de signo en el intervalo.
 
+## **Métodos abiertos**
 ## Newton-Raphson
 Este método utiliza la derivada de la función para encontrar una aproximación de la raíz. Parte de una estimación inicial y mejora iterativamente usando la tangente a la curva.
 
