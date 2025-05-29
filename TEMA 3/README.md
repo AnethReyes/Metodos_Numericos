@@ -29,7 +29,27 @@ Versión optimizada del método de Jacobi que utiliza los valores actualizados d
 
 ## Pseudocódigos de los Métodos Implementados
 
-### 1. Método de Gauss Jordan
+### 1. Método de Eliminacion Gaussiana 
+
+```plaintext
+Algoritmo Eliminación Gaussiana:
+   Entrada:
+      - A: matriz n×n
+      - b: vector n×1
+   Salida:
+      - Matriz triangular superior
+
+   1. Para k desde 0 hasta n-2 hacer:
+         Para i desde k+1 hasta n-1 hacer:
+              factor ← A[i][k] / A[k][k]
+              Para j desde k hasta n-1 hacer:
+                   A[i][j] ← A[i][j] - factor * A[k][j]
+              Fin Para
+              b[i] ← b[i] - factor * b[k]
+         Fin Para
+   2. Retornar A, b (sistema triangular)
+```
+### 2. Método de Gauss Jordan
 
 ```plaintext
 Algoritmo Gauss-Jordan:
@@ -54,7 +74,40 @@ Algoritmo Gauss-Jordan:
          Fin Para
    2. Retornar A (columna n contiene solución)
 ```
-### 2. Método de Gauss Seidel
+
+### 3. Método de Jacobi
+
+```plaintext
+Algoritmo Jacobi:
+   Entrada:
+      - A: matriz n×n
+      - b: vector n×1
+      - x0: vector inicial
+      - tol: tolerancia
+      - max_iter: máximo iteraciones
+   Salida:
+      - Solución aproximada x
+
+   1. x ← x0
+   2. Para iter desde 1 hasta max_iter hacer:
+         x_nuevo ← vector nuevo de tamaño n
+         Para i desde 0 hasta n-1 hacer:
+              suma ← 0
+              Para j desde 0 hasta n-1 hacer:
+                   Si j ≠ i entonces:
+                        suma ← suma + A[i][j] * x[j]
+                   Fin Si
+              Fin Para
+              x_nuevo[i] ← (b[i] - suma) / A[i][i]
+         Fin Para
+         
+         Si ||x_nuevo - x|| < tol entonces:
+              Retornar x_nuevo
+         Fin Si
+         x ← x_nuevo
+   3. Retornar x (última aproximación)
+```
+### 4. Método de Gauss Seidel
 
 ```plaintext
 Algoritmo Gauss-Seidel:
@@ -87,56 +140,4 @@ Algoritmo Gauss-Seidel:
               Retornar x
          Fin Si
    3. Retornar x
-```
-### 3. Método de Eliminacion Gaussiana 
-
-```plaintext
-Algoritmo Eliminación Gaussiana:
-   Entrada:
-      - A: matriz n×n
-      - b: vector n×1
-   Salida:
-      - Matriz triangular superior
-
-   1. Para k desde 0 hasta n-2 hacer:
-         Para i desde k+1 hasta n-1 hacer:
-              factor ← A[i][k] / A[k][k]
-              Para j desde k hasta n-1 hacer:
-                   A[i][j] ← A[i][j] - factor * A[k][j]
-              Fin Para
-              b[i] ← b[i] - factor * b[k]
-         Fin Para
-   2. Retornar A, b (sistema triangular)
-```
-### 4. Método de Jacobi
-
-```plaintext
-Algoritmo Jacobi:
-   Entrada:
-      - A: matriz n×n
-      - b: vector n×1
-      - x0: vector inicial
-      - tol: tolerancia
-      - max_iter: máximo iteraciones
-   Salida:
-      - Solución aproximada x
-
-   1. x ← x0
-   2. Para iter desde 1 hasta max_iter hacer:
-         x_nuevo ← vector nuevo de tamaño n
-         Para i desde 0 hasta n-1 hacer:
-              suma ← 0
-              Para j desde 0 hasta n-1 hacer:
-                   Si j ≠ i entonces:
-                        suma ← suma + A[i][j] * x[j]
-                   Fin Si
-              Fin Para
-              x_nuevo[i] ← (b[i] - suma) / A[i][i]
-         Fin Para
-         
-         Si ||x_nuevo - x|| < tol entonces:
-              Retornar x_nuevo
-         Fin Si
-         x ← x_nuevo
-   3. Retornar x (última aproximación)
 ```
