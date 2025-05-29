@@ -2,27 +2,49 @@
  * Versión extendida de Simpson para n divisible por 3
  * Fórmula: (3h/8)[f(x0) + 3∑(f(x1)+f(x2)) + 2∑f(x3,6,...) + f(xn)]
  */
-public class Simpson38 {
-    
-    public static double integrar(Funcion f, double a, double b, int n) {
-        if (n % 3 != 0) throw new IllegalArgumentException("n debe ser multiplo de 3");
-        
-        double h = (b - a) / n;
-        double suma = f.evaluar(a) + f.evaluar(b);
-        
-        for (int i = 1; i < n; i++) {
-            double x = a + i * h;
-            suma += (i % 3 == 0) ? 2 * f.evaluar(x) : 3 * f.evaluar(x);
-        }
-        
-        double resultado = (3 * h / 8) * suma;
-        return Math.round(resultado * 100.0) / 100.0;
+import java.text.DecimalFormat;
+
+public class MétodoDeSimpson38 {
+
+    public static double f(double x) {
+        return Math.pow(x, 4) - 2 * x + 1;
     }
 
-    // Ejemplo: ∫(sin(x^2))dx de 0 a π ≈ 0.77
+    public static double simpsonThreeEighths(double a, double b, int n) {
+        if (n % 3 != 0) {
+            throw new IllegalArgumentException("n debe ser múltiplo de 3.");
+        }
+
+        double h = (b - a) / n;
+        double sum = f(a) + f(b);
+
+        for (int i = 1; i < n; i++) {
+            double x = a + i * h;
+            sum += (i % 3 == 0) ? 2 * f(x) : 3 * f(x);
+        }
+
+        return (3 * h / 8) * sum;
+    }
+
     public static void main(String[] args) {
-        Funcion f = x -> Math.sin(Math.pow(x, 2));
-        double integral = integrar(f, 0, Math.PI, 999); // 999 es múltiplo de 3
-        System.out.println("Integral aproximada: " + integral);
+        double a = 0;      
+        double b = 3;      
+        int n = 6;         
+
+        double result = simpsonThreeEighths(a, b, n);
+        
+        DecimalFormat df = new DecimalFormat("#.##"); // 2 decimales
+        System.out.println("Resultado: " + df.format(result));
     }
 }
+
+/** # === Ejemplo de ejecución ===
+* Input:
+* f(x) = x^4 - 2x + 1
+* Intervalo: [0, 3]
+* n = 6 (n debe ser múltiplo de 3)
+* Output:
+* Resultado: 42.66
+*/
+
+
