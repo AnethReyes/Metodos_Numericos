@@ -8,9 +8,10 @@ public class RedondeoError {
     }
 }
 
-# === Ejemplo de ejecución ===
-# Input:
-# num = 3.1415926535
-#
-# Output:
-# Error de redondeo: 0.0015926534999999298
+/** # === Ejemplo de ejecución ===
+* Input:
+* num = 3.1415926535
+*
+* Output:
+* Error de redondeo: 0.0015926534999999298 */
+
