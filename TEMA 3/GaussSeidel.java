@@ -5,6 +5,8 @@
  * @param tol Tolerancia para convergencia
  * @return Solución aproximada x
  */
+import java.util.Arrays;
+
 public class GaussSeidel {
     
     public static double[] resolver(double[][] A, double[] b, double tol) {
@@ -36,4 +38,18 @@ public class GaussSeidel {
         System.out.println("Solucion: " + Arrays.toString(x));
         // Output: [1.0, -1.0, 1.0]
     }
-}
+} 
+
+/** # === Ejemplo de ejecución ===
+* Input:
+* A = {
+*   {4, 1, -1},
+*   {2, 5, 2},
+*   {1, -1, 3}
+* }
+* b = {5, -1, 3}
+* tol = 0.001
+* Output:
+* Solucion: [1.0, -1.0, 1.0]
+*/
+
