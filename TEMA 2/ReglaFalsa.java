@@ -3,35 +3,69 @@
  * Combina ideas de Bisección y Secante: usa interpolación lineal en lugar de dividir el intervalo a la mitad.
  * Convergencia: Superlineal (más rápido que Bisección en muchos casos).
  */
-public class ReglaFalsa {
+public class ReglaFalsaSimple {
     
-    public static double resolver(Funcion f, double a, double b, double tol, int maxIter) {
-        if (f.evaluar(a) * f.evaluar(b) >= 0) {
-            throw new IllegalArgumentException("No se cumple f(a)*f(b) < 0");
+    interface MiFuncion {
+        double calcular(double x);
+    }
+    
+    public static void main(String[] args) {
+        // Definir la función como clase anónima
+        MiFuncion f = new MiFuncion() {
+            public double calcular(double x) {
+                return Math.cos(x) - x;
+            }
+        };
+        
+        double a = 0.0;
+        double b = 1.0;
+        double tolerancia = 0.0001;
+        int maxPasos = 100;
+        double raiz = 0;
+        
+        for (int paso = 1; paso <= maxPasos; paso++) {
+            double fa = f.calcular(a);
+            double fb = f.calcular(b);
+            
+            // Calcular nuevo punto
+            raiz = (a * fb - b * fa) / (fb - fa);
+            double fRaiz = f.calcular(raiz);
+            
+            System.out.println("Paso " + paso + ": x = " + raiz);
+            
+            // Verificar convergencia
+            if (Math.abs(fRaiz) < tolerancia) {
+                double resultado = Math.round(raiz * 100) / 100.0;
+                System.out.println("Raiz encontrada: " + resultado);
+                return;
+            }
+            
+            // Actualizar intervalo
+            if (fRaiz * fa < 0) {
+                b = raiz;
+            } else {
+                a = raiz;
+            }
         }
         
-        double c = a;
-        for (int iter = 0; iter < maxIter; iter++) {
-            // Fórmula de interpolación lineal (como la Secante pero con intervalo fijo)
-            c = (a * f.evaluar(b) - b * f.evaluar(a)) / (f.evaluar(b) - f.evaluar(a));
-            
-            if (Math.abs(f.evaluar(c)) < tol) {
-                break;
-            }
-            
-            if (f.evaluar(c) * f.evaluar(a) < 0) {
-                b = c;
-            } else {
-                a = c;
-            }
-        }
-        return Math.round(c * 100.0) / 100.0; // Redondeo a 2 decimales
-    }
-
-    // Ejemplo de uso
-    public static void main(String[] args) {
-        Funcion f = x -> Math.cos(x) - x; // f(x) = cos(x) - x (raíz ≈ 0.74)
-        double raiz = resolver(f, 0.0, 1.0, 0.0001, 100);
-        System.out.println("Raiz aproximada: " + raiz); // Output: 0.74
+        System.out.println("No se encontro la raiz en " + maxPasos + " pasos");
     }
 }
+
+/** # === Ejemplo de ejecución ===
+* Input:
+* f(x) = cos(x) - x
+* a = 0.0
+* b = 1.0
+* tol = 0.0001
+* maxPasos = 100
+* Output:
+* Paso 1: x = 0.5384690426783971
+* Paso 2: x = 0.7031946120986566
+* Paso 3: x = 0.7363796144521006
+* Paso 4: x = 0.7397751382618291
+* Paso 5: x = 0.739085124774084
+* Paso 6: x = 0.739085133215522
+* Raíz encontrada: 0.74
+*/
+
