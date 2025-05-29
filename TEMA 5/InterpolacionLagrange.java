@@ -28,3 +28,13 @@ public class InterpolacionLagrange {
         System.out.println("Valor interpolado: " + valor); // Output: 6.25
     }
 }
+
+/** # === Ejemplo de ejecución ===
+* Input:
+* x = {1, 2, 3}
+* y = {1, 4, 9}
+* punto = 2.5
+* Output:
+* Valor interpolado: 6.25
+*/
+
