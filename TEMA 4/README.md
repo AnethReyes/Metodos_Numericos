@@ -13,6 +13,18 @@ Cuando las funciones son difíciles de derivar o integrar analíticamente, o sol
 
 Estos métodos son fundamentales en física computacional, ingeniería y análisis de datos.
 
+## Método del Trapecio
+Este método aproxima el área bajo una curva dividiendo el intervalo de integración en segmentos y calculando el área de trapecios formados entre cada par de puntos.
+
+## Método de Simpson 1/3
+Este método utiliza parábolas para aproximar la función en cada segmento, ofreciendo mayor precisión que el trapecio. Requiere un número par de intervalos.
+
+## Método de Simpson 3/8
+Extensión del método de Simpson que utiliza polinomios de tercer grado, adecuado cuando el número de intervalos es múltiplo de tres.
+
+## Cuadratura de Gauss-Legendre
+Método de integración numérica avanzado que selecciona óptimamente puntos de evaluación y pesos asociados.
+
 ## Pseudocódigos de los Métodos Implementados
 
 ### 1. Método de Gauss Legendre
