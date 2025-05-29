@@ -35,3 +35,11 @@ public class Correlacion {
         // Output: Coeficiente de correlación (r): 0.99
     }
 }
+
+/** # === Ejemplo de ejecución ===
+* Input:
+* x = {1, 2, 3, 4, 5}
+* y = {2, 3.1, 3.9, 5.1, 6}
+* Output:
+* Coeficiente de correlación (r): 0.99
+*/
